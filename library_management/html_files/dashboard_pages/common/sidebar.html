@@ -1,0 +1,52 @@
+<style>
+    a {
+        margin-bottom: 20px;
+    }
+</style>
+<div class="w3-sidebar w3-bar-block w3-light-grey w3-card" style="width:20%;font-size: 20px;">
+    <h1 class="w3-bar-item">LibMag</h1>
+    <a href="/library_management/html_files/dashboard_pages/dashboard.html"
+        class="w3-bar-item w3-button w3-border-bottom"><span class="fa fa-dashboard"></span> Dashboard</a>
+    <a href="/library_management/html_files/dashboard_pages/books_manager.html" id="manager"
+        class="w3-bar-item w3-button w3-border-bottom"><span class="fa fa-tasks"></span> Manage Books</a>
+    <a href="/library_management/html_files/dashboard_pages/books.html"
+        class="w3-bar-item w3-button w3-border-bottom"><span class="fa fa-book"></span> Books</a>
+    <a href="/library_management/html_files/dashboard_pages/users.html"
+        class="w3-bar-item w3-button w3-border-bottom"><span class="fa fa-users"></span> Users</a>
+    <a href="/library_management/html_files/home_pages/login_page.html"
+        class="w3-bar-item w3-button w3-border-bottom"><span class="fa fa-sign-out"></span> Logout</a>
+</div>
+<div style="margin-left:20%">
+
+    <div class="w3-container w3-black">
+        <h1 id="pageHeading">My Page</h1>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        var pathName = $(location).attr('pathname').split('/')[3];
+        console.log(pathName);
+        var userType = 'admin';
+        heading = 'Dashboard';
+        switch (pathName) {
+            case 'dashboard.html':
+                heading = 'Dashboard';
+                break;
+            case 'books_manager.html':
+                heading = 'Books Manager';
+                if (userType !== 'admin')
+                    $("#manager").remove();
+                break;
+            case 'books.html':
+                heading = 'Books';
+                break;
+            case 'users.html':
+                heading = 'Users';
+                break;
+            default:
+                heading = "Dashboard";
+        }
+        $("#pageHeading").html(heading);
+
+    });
+</script>
