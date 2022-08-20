@@ -1,0 +1,68 @@
+{
+  "result": "success",
+  "student_list": [
+    {
+      "id": 1,
+      "rollNo": "142219104135",
+      "name": "Syed Anas Ahmed",
+      "mobileNumber": "8939216589",
+      "email": "syedanas2607@gmail.com",
+      "DOB": "26/10/2001",
+      "joiningYear": "2019"
+    },
+    {
+      "id": 2,
+      "rollNo": "142219104097",
+      "name": "Ranjith.R",
+      "mobileNumber": "7812912381",
+      "email": "ranjithr@gmail.com",
+      "DOB": "08/03/2001",
+      "joiningYear": "2019"
+    },
+    {
+      "id": 3,
+      "rollNo": "142219104142",
+      "name": "Yuvan Kumar.R",
+      "mobileNumber": "9882337431",
+      "email": "yuvan@gmail.com",
+      "DOB": "02/01/2002",
+      "joiningYear": "2019"
+    },
+    {
+      "id": 3,
+      "rollNo": "142219104141",
+      "name": "Vicky",
+      "mobileNumber": "8932231922",
+      "email": "vicky@gmail.com",
+      "DOB": "02/12/2002",
+      "joiningYear": "2019"
+    },
+    {
+      "id": 4,
+      "rollNo": "142219104139",
+      "name": "Vasa",
+      "mobileNumber": "7332231922",
+      "email": "vasa@gmail.com",
+      "DOB": "02/12/2002",
+      "joiningYear": "2019"
+    },
+    {
+      "id": 5,
+      "rollNo": "142219104126",
+      "name": "Sreejith",
+      "mobileNumber": "8738821923",
+      "email": "sreer@gmail.com",
+      "DOB": "10/05/2002",
+      "joiningYear": "2019"
+    },
+    {
+      "rollNo": "142219104109",
+      "name": "Santhosh",
+      "mobileNumber": "7635523732",
+      "email": "sandy@gmail.com",
+      "DOB": "12/08/2002",
+      "joiningYear": "2019"
+    }
+  ]
+}
+

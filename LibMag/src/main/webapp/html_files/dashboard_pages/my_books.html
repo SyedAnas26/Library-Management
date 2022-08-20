@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management</title>
+
+    <!-- BOOTSTRAP INCLUDES -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- JAVASCRIPT INCLUDES -->
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://kit.fontawesome.com/3cd6602617.js" crossorigin="anonymous"></script>
+    <script src='js/knockout-3.5.1.js'></script>
+    <script src="js/knockout.mapping-latest.js"></script>
+    <script src="js/my_books.js"></script>
+
+    <!-- CSS INCLUDES -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="css/dashboard_style.css">
+
+</head>
+
+<body>
+<div id="wrapper">
+    <div id="sidebar">
+    </div>
+
+    <section id="content-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="content-title"><b>My Books</b></h2>
+            </div>
+        </div>
+
+        <div class="row mb-5">
+            <div class="col-md-6">
+                <div class="input-group rounded">
+                    <input type="search" data-bind="textInput:query" class="form-control rounded"
+                           placeholder="Search by book or author name" aria-label="Search"
+                           aria-describedby="search-addon"/>
+                    <span class="input-group-text border-0" id="search-addon">
+                         <i class="fas fa-search"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <select class="form-select" data-bind="options: filter.filterList,
+                                   value: filter.selectedFilter" aria-label="Choose Filter">
+                </select>
+            </div>
+        </div>
+        <div data-bind="if: filteredBooks().length<=0">
+            No Books found on your search and filters
+        </div>
+        <div class="row" data-bind="foreach: filteredBooks">
+            <div class="card" style="width: 20rem;margin:10px;padding: 0">
+                <img src="images/bg.png" class="card-img-top" alt="...">
+                <div class="card-body" style="padding-bottom: 0;padding-top: 0">
+                    <h5 class="card-title"><b data-bind="text: bookName"></b></h5>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <b>Author:</b><span data-bind="text: author"></span>
+                            <br>
+                            <b>Year: </b><span data-bind="text: publishedYear"> </span>
+                            <br>
+                            <b>Cost &#8377;: </b><span data-bind="text: price"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <b>Days Left: </b> <span data-bind="text: daysLeft"></span>
+                            <br>
+                            <b>Status: </b> <span data-bind="text: status, style: { color: $parent.getStatusColor($data) }"></span>
+                        </div>
+                    </div>
+                    <div class="row mt-2" data-bind="if: status() == 'Pending Issue'">
+                        <div class="col-md-12">
+                            <i class="fas fa-trash" data-bind="click: $parent.deleteBook"
+                               style="float: right;font-size: 20px;padding-bottom: 15px;cursor:pointer;"
+                               aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+<script>
+    $(function () {
+        $("#sidebar").load("html_files/dashboard_pages/common/sidebar.html");
+    });
+</script>
+
+
+</body>
+
+</html>

@@ -26,14 +26,6 @@
 
 <body>
 
-    <script>
-        $(function () {
-            $("#header").load("base/header.html");
-            $("#footer").load("base/footer.html");
-        });
-    </script>
-
-
     <div class="row d-flex justify-content-center align-items-center" style="margin:30px">
         <div class="col-xl-4">
             <div class="card" style="border-radius: 15px;">
@@ -63,11 +55,16 @@
     </div>
 
     <script type="text/javascript">
+        $(function () {
+            $("#header").load("base/header.html");
+            $("#footer").load("base/footer.html");
+        });
+
         function login() {
             var email = document.getElementById("email").value;
             var password = document.getElementById("pass").value;
             if (email == "admin" && password == "pass@123") {
-                window.location.href = '/html_files/dashboard_pages/dashboard.html';
+                window.location.href = '../dashboard_pages/dashboard.html';
             } else {
                 alert("Invalid Email or Password");
             }

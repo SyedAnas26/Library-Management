@@ -1,0 +1,15 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="LibMag">
+    <output-path>$USER_HOME$/Desktop/</output-path>
+    <root id="archive" name="LibMag.war">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="LibMag" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
